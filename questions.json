@@ -1814,8 +1814,8 @@
         "content": "<p><img src=\"images/7317f9b6-2e28-4fdb-9bd0-809578611be9_1765632710113_De_B.2.b.png\"></p>"
       }
     ],
-    "chapterId": "ch2",
-    "chapterName": "Chương 2: Mô hình & Đại số quan hệ",
+    "chapterId": "ch4",
+    "chapterName": "Chương 4: Mô hình ER & Ánh xạ quan hệ",
     "correctOptionId": "790736b4-1897-48d9-9f65-ba714b4fc8b4",
     "explanation": "Mỗi Employee làm nhiều Project và mỗi Project có nhiều Employee là quan hệ nhiều - nhiều (N:N), do đó cả hai đầu liên kết đều có ký hiệu crow's foot. Các thuộc tính Role và Hours mô tả chi tiết cho công việc nên được gắn trực tiếp vào hình thoi liên kết 'work' (hình C hiển thị De_B.2.d.png)."
   },
@@ -1884,8 +1884,8 @@
         "content": "<p>This is a 1–1 relationship because each ORDER has one CUSTOMER.</p>"
       }
     ],
-    "chapterId": "ch3",
-    "chapterName": "Chương 3: Phụ thuộc hàm & Dạng chuẩn",
+    "chapterId": "ch4",
+    "chapterName": "Chương 4: Mô hình ER & Ánh xạ quan hệ",
     "correctOptionId": "50918f4a-9031-4bd1-96ff-0b8e447e8974",
     "explanation": "Vì một Customer có thể có nhiều Order nhưng mỗi Order bắt buộc thuộc đúng một Customer, đây là quan hệ 1-N từ CUSTOMER sang ORDER. Điều kiện 'mỗi ORDER bắt buộc phải thuộc đúng một CUSTOMER' đồng nghĩa với việc thực thể ORDER tham gia toàn phần (total participation) vào mối quan hệ."
   },
@@ -2969,8 +2969,8 @@
         "content": "<p>UNIQUE và PRIMARY KEY giống hệt nhau.</p>"
       }
     ],
-    "chapterId": "ch4",
-    "chapterName": "Chương 4: Mô hình ER & Ánh xạ quan hệ",
+    "chapterId": "ch3",
+    "chapterName": "Chương 3: Phụ thuộc hàm & Dạng chuẩn",
     "correctOptionId": "9fe7bc22-7f0b-4b23-9fcc-45fcca106052",
     "explanation": "Một thuộc tính có các giá trị không trùng lặp đối với từng thực thể hoàn toàn thỏa mãn định nghĩa của một khóa ứng viên (Candidate Key). Khi SID đã được chọn làm khóa chính (PK), thuộc tính Email đóng vai trò khóa ứng viên phụ và cần được áp đặt ràng buộc duy nhất (UNIQUE) trong cơ sở dữ liệu."
   },
@@ -3879,8 +3879,8 @@
         "content": "<p><img src=\"images/cab31e28-4f65-47d2-81aa-4f40fc0d52b9_1766553288789_INT1313_DH_000002_4.png\"></p>"
       }
     ],
-    "chapterId": "ch2",
-    "chapterName": "Chương 2: Mô hình & Đại số quan hệ",
+    "chapterId": "ch4",
+    "chapterName": "Chương 4: Mô hình ER & Ánh xạ quan hệ",
     "correctOptionId": "7815d357-27bd-4638-bbbb-d1f172f3e387",
     "explanation": "Booking là một tập thực thể độc lập có các thuộc tính CheckIn và CheckOut. Mối quan hệ giữa Khách (1) và Booking (N) là mối quan hệ nhiều–một (N–1), do đó trên lược đồ ER đường liên kết có mũi tên trỏ về phía thực thể Khách (phía 1), tương ứng với hình INT1313_DH_000002_2."
   },
@@ -3914,8 +3914,8 @@
         "content": "<p><img src=\"images/77723814-d30e-48cc-a1c7-7575f92d51b8_1766671613410_INT1313_DH_000003_4.png\"></p>"
       }
     ],
-    "chapterId": "ch2",
-    "chapterName": "Chương 2: Mô hình & Đại số quan hệ",
+    "chapterId": "ch4",
+    "chapterName": "Chương 4: Mô hình ER & Ánh xạ quan hệ",
     "correctOptionId": "2d63617b-81fd-420c-a336-9bea7a7a5204",
     "explanation": "Trong lược đồ ER chuẩn, mối quan hệ kế thừa/phân lớp (Subclass) giữa lớp cha ROLE và các lớp con ADMIN, USER được biểu diễn bằng hình tam giác mang nhãn 'is a' có đỉnh hướng về phía thực thể cha ROLE, tương ứng với hình INT1313_DH_000003_2."
   },
@@ -4859,8 +4859,8 @@
         "content": "<p>PROJECT(ProjectID PK, Title); </p><p>PROJECT_BUDGET(ProjectID FK→PROJECT, ItemName, Cost, PK(ProjectID, ItemName))</p>"
       }
     ],
-    "chapterId": "ch4",
-    "chapterName": "Chương 4: Mô hình ER & Ánh xạ quan hệ",
+    "chapterId": "ch3",
+    "chapterName": "Chương 3: Phụ thuộc hàm & Dạng chuẩn",
     "correctOptionId": "1dc61a50-85b3-42eb-9ba5-a5b3b6c309dc",
     "explanation": "Thuộc tính đa trị phức hợp BudgetItem(ItemName, Cost) được tách thành bảng riêng PROJECT_BUDGET để tuân thủ dạng chuẩn 1NF. Khóa chính của bảng này là cặp kết hợp (ProjectID, ItemName) với ProjectID đóng vai trò là khóa ngoại tham chiếu đến bảng PROJECT."
   },
@@ -5034,8 +5034,8 @@
         "content": "<p>Chỉ tạo 2 bảng STUDENT và EMPLOYEE với các thuộc tính khác nhau, không cần PERSON.</p>"
       }
     ],
-    "chapterId": "ch2",
-    "chapterName": "Chương 2: Mô hình & Đại số quan hệ",
+    "chapterId": "ch4",
+    "chapterName": "Chương 4: Mô hình ER & Ánh xạ quan hệ",
     "correctOptionId": "2fec47a7-a75c-45ae-a543-abd6bc2a3d8e",
     "explanation": "Đối với quan hệ chuyên biệt hóa chồng lấp (overlapping) có thuộc tính riêng, phương án thiết kế tốt nhất là tạo bảng cha PERSON lưu thuộc tính chung, cùng các bảng con riêng biệt STUDENT và EMPLOYEE có PK/FK tham chiếu về PERSON."
   },
@@ -5979,8 +5979,8 @@
         "content": "<p>DOCTOR(DID PK);</p><p>DRUG(RID PK);</p><p>PATIENT(PID PK);</p><p>PRESCRIBE(DID FK, RID FK, PID FK, Dose, PK(PID,RID))</p><p><br></p>"
       }
     ],
-    "chapterId": "ch4",
-    "chapterName": "Chương 4: Mô hình ER & Ánh xạ quan hệ",
+    "chapterId": "ch3",
+    "chapterName": "Chương 3: Phụ thuộc hàm & Dạng chuẩn",
     "correctOptionId": "303fcfb4-6c94-4b27-b2a0-eb42cc6adaf1",
     "explanation": "Vì mỗi bệnh nhân được kê một loại thuốc bởi đúng một bác sĩ nên tồn tại phụ thuộc hàm (PID, RID) -> DID. Do đó khóa chính của bảng quan hệ PRESCRIBE là bộ (PID, RID)."
   },
@@ -6014,8 +6014,8 @@
         "content": "<p>Đây là quan hệ 1–N từ CUSTOMER→ORDER.</p>"
       }
     ],
-    "chapterId": "ch3",
-    "chapterName": "Chương 3: Phụ thuộc hàm & Dạng chuẩn",
+    "chapterId": "ch4",
+    "chapterName": "Chương 4: Mô hình ER & Ánh xạ quan hệ",
     "correctOptionId": "0182844b-3e55-4d82-937a-802820c63f0a",
     "explanation": "Mỗi Customer có nhiều Orders và mỗi Order thuộc 1 Customer nên đây là quan hệ 1–N từ CUSTOMER sang ORDER. Điều kiện bắt buộc thuộc đúng một Customer xác định ORDER tham gia toàn phần vào quan hệ."
   },
@@ -7064,8 +7064,8 @@
         "content": "<p><img src=\"images/4fcf251e-40ac-44d4-ad00-8309953a3cec_1766549592496_INT1313_DO_000003_3.png\"></p>"
       }
     ],
-    "chapterId": "ch2",
-    "chapterName": "Chương 2: Mô hình & Đại số quan hệ",
+    "chapterId": "ch4",
+    "chapterName": "Chương 4: Mô hình ER & Ánh xạ quan hệ",
     "correctOptionId": "35c88f93-dd3f-4d57-8941-ee096f0e8172",
     "explanation": "Mối quan hệ giữa CAR, TRUCK và VEHICLE là mối quan hệ chuyên biệt hóa / kế thừa (IS-A). Trong mô hình ER chuẩn, quan hệ kế thừa IS-A được biểu diễn bằng hình tam giác có nhãn ISA hướng đỉnh lên thực thể cha siêu lớp (VEHICLE). Vì vậy thiết kế ở hình D là hoàn toàn phù hợp."
   },
@@ -7099,8 +7099,8 @@
         "content": "<p>Chỉ cần INDEX trên FK (và thêm NOT NULL nếu A tham gia toàn phần).</p>"
       }
     ],
-    "chapterId": "ch2",
-    "chapterName": "Chương 2: Mô hình & Đại số quan hệ",
+    "chapterId": "ch4",
+    "chapterName": "Chương 4: Mô hình ER & Ánh xạ quan hệ",
     "correctOptionId": "60ec64be-bc17-4cf2-a085-9ca5ee3477c7",
     "explanation": "Khi đặt khóa ngoại FK trong bảng A trỏ sang bảng B, FK bắt buộc phải có ràng buộc UNIQUE để ngăn ngừa nhiều bản ghi của A cùng trỏ đến một bản ghi của B, bảo đảm đúng tính chất 1-1. Nếu thực thể A tham gia toàn phần vào mối quan hệ thì FK cần bổ sung thêm ràng buộc NOT NULL."
   },
@@ -8079,8 +8079,8 @@
         "content": "<p>Khóa chính chỉ cần 1 thuộc tính, nên PK(SID,CID) là sai.</p>"
       }
     ],
-    "chapterId": "ch2",
-    "chapterName": "Chương 2: Mô hình & Đại số quan hệ",
+    "chapterId": "ch3",
+    "chapterName": "Chương 3: Phụ thuộc hàm & Dạng chuẩn",
     "correctOptionId": "b49ed454-1b42-4c44-b8c2-6014ccc6331a",
     "explanation": "PK(SID, CID) là khóa chính phức hợp gồm sự kết hợp của cả hai thuộc tính SID và CID. Từng thuộc tính riêng lẻ SID hoặc CID có thể xuất hiện lặp lại nhiều lần nên không thể tự mình định danh duy nhất một bản ghi trong quan hệ."
   },
@@ -9094,8 +9094,8 @@
         "content": "<p><img src=\"images/a90b7d73-018d-46f6-9962-5f7f3338fe03_1766546564665_8-B.png\"></p>"
       }
     ],
-    "chapterId": "ch2",
-    "chapterName": "Chương 2: Mô hình & Đại số quan hệ",
+    "chapterId": "ch4",
+    "chapterName": "Chương 4: Mô hình ER & Ánh xạ quan hệ",
     "correctOptionId": "f3a736d9-4b89-439f-9bfe-0fda512cc7c1",
     "explanation": "Mối quan hệ giữa Khách hàng (Customer) và Hóa đơn (Invoice) là 1–N (1 khách hàng có nhiều hóa đơn, mỗi hóa đơn do đúng 1 khách hàng lập). Theo ký hiệu Crow’s foot (chân quạ), phía Customer là đường đơn (1) và phía Invoice có ký hiệu chân quạ (N)."
   },
@@ -9129,8 +9129,8 @@
         "content": "<p><img src=\"images/c15dbe64-b980-4e10-aaa3-a3b069d8865d_1766560853514_INT1313_DT_000002_4.png\"></p>"
       }
     ],
-    "chapterId": "ch2",
-    "chapterName": "Chương 2: Mô hình & Đại số quan hệ",
+    "chapterId": "ch4",
+    "chapterName": "Chương 4: Mô hình ER & Ánh xạ quan hệ",
     "correctOptionId": "15c8038f-426a-4bde-84b0-710b9b284a26",
     "explanation": "Phòng (Room) là thực thể yếu phụ thuộc vào Khách sạn (Hotel), do đó Room được biểu diễn bằng hình chữ nhật kép, RoomNo là khóa bộ phận (gạch chân nét đứt). Mối quan hệ xác định belong được biểu diễn bằng hình thoi kép kết nối với Room."
   },
@@ -9164,8 +9164,8 @@
         "content": "<p><img src=\"images/ed6d4d98-0080-4e3a-8a61-393449402105_1766547655583_INT1313_DT_000003_4.png\"></p>"
       }
     ],
-    "chapterId": "ch2",
-    "chapterName": "Chương 2: Mô hình & Đại số quan hệ",
+    "chapterId": "ch4",
+    "chapterName": "Chương 4: Mô hình ER & Ánh xạ quan hệ",
     "correctOptionId": "497418f3-b8ea-42c4-ae5d-fb1b606e677c",
     "explanation": "Mối quan hệ chuyên biệt hóa / khái quát hóa (ISA hierarchy) biểu diễn Student và Employee là các thực thể con của Person. Trong mô hình ER chuẩn, mối quan hệ thừa kế ISA được ký hiệu bằng hình tam giác có nhãn \"ISA\" bên trong."
   },
@@ -9234,8 +9234,8 @@
         "content": "<p><img src=\"images/7efc95e5-0203-44bf-a89e-95be412a5222_1766547796484_11-D.png\"></p>"
       }
     ],
-    "chapterId": "ch2",
-    "chapterName": "Chương 2: Mô hình & Đại số quan hệ",
+    "chapterId": "ch4",
+    "chapterName": "Chương 4: Mô hình ER & Ánh xạ quan hệ",
     "correctOptionId": "b4973bad-5d30-45a5-bd50-6cdae488e74e",
     "explanation": "Mối quan hệ giữa Nhà xuất bản (Publisher) và Sách (Book) là 1–N (1 NXB xuất bản nhiều sách, mỗi sách do 1 NXB xuất bản). Theo chuẩn Crow’s foot, phía Publisher là nét đơn (1) và phía Book có nhánh chân quạ (N)."
   },
@@ -10249,8 +10249,8 @@
         "content": "<p>Thuộc tính EMPID trong DEPARTMENT phải NOT NULL và là FK.</p>"
       }
     ],
-    "chapterId": "ch2",
-    "chapterName": "Chương 2: Mô hình & Đại số quan hệ",
+    "chapterId": "ch4",
+    "chapterName": "Chương 4: Mô hình ER & Ánh xạ quan hệ",
     "correctOptionId": "4490383e-7492-45c7-8579-0e14e7e9574e",
     "explanation": "Ràng buộc tham gia toàn phần (total participation) của EMPLOYEE trong mối quan hệ với DEPARTMENT yêu cầu khóa ngoại DEPTID liên kết không được phép rỗng (NOT NULL), đảm bảo mọi nhân viên đều được phân bổ vào một phòng ban."
   },
@@ -11194,8 +11194,8 @@
         "content": "<p>PERSON(PID PK,…); STUDENT(SID PK,…); STAFF(StaffID PK,…)</p>"
       }
     ],
-    "chapterId": "ch3",
-    "chapterName": "Chương 3: Phụ thuộc hàm & Dạng chuẩn",
+    "chapterId": "ch4",
+    "chapterName": "Chương 4: Mô hình ER & Ánh xạ quan hệ",
     "correctOptionId": "d8c6bb47-6f7e-43af-8853-77add8280bf8",
     "explanation": "Lược đồ thể hiện mối quan hệ kế thừa/chuyên biệt hóa (ISA) giữa Person và hai lớp con Student, Staff. Theo quy tắc ánh xạ, bảng cha PERSON giữ các thuộc tính chung, còn các bảng con STUDENT và STAFF sử dụng khóa chính của Person (PID) vừa làm khóa chính vừa làm khóa ngoại."
   },
@@ -11404,8 +11404,8 @@
         "content": "<p>Một cột JSON bắt buộc</p>"
       }
     ],
-    "chapterId": "ch4",
-    "chapterName": "Chương 4: Mô hình ER & Ánh xạ quan hệ",
+    "chapterId": "ch3",
+    "chapterName": "Chương 3: Phụ thuộc hàm & Dạng chuẩn",
     "correctOptionId": "d8fb4c74-88fb-4740-bf32-90b5e2169cf5",
     "explanation": "Để đảm bảo quy tắc dạng chuẩn 1 (1NF) về tính nguyên tố của thuộc tính, thuộc tính đa trị trong ER được tách thành một bảng riêng. Bảng phụ này gồm khóa chính của thực thể chủ (owner_id) và thuộc tính đa trị đó (value), với khóa chính kết hợp PK(owner_id, value)."
   },
@@ -11894,8 +11894,8 @@
         "content": "<p>Tạo bảng PHONE(Phone PK), không dùng FK tới EMPLOYEE</p>"
       }
     ],
-    "chapterId": "ch4",
-    "chapterName": "Chương 4: Mô hình ER & Ánh xạ quan hệ",
+    "chapterId": "ch3",
+    "chapterName": "Chương 3: Phụ thuộc hàm & Dạng chuẩn",
     "correctOptionId": "eceb38a8-29c5-4fc7-8e2f-fde80e93c344",
     "explanation": "Thuộc tính đa trị Phone của thực thể Employee được ánh xạ thành bảng riêng EMP_PHONE để đảm bảo dạng chuẩn 1NF. Khóa chính của bảng này là tổ hợp PK(EID, Phone), trong đó EID là khóa ngoại tham chiếu đến EMPLOYEE."
   },
@@ -12139,8 +12139,8 @@
         "content": "<p>PRODUCT(PID PK); TAG(Tag PK); không cần bảng trung gian</p>"
       }
     ],
-    "chapterId": "ch4",
-    "chapterName": "Chương 4: Mô hình ER & Ánh xạ quan hệ",
+    "chapterId": "ch3",
+    "chapterName": "Chương 3: Phụ thuộc hàm & Dạng chuẩn",
     "correctOptionId": "5280fc70-4451-4f49-8ec9-fe085adeef58",
     "explanation": "Thuộc tính đa trị Tag của Product được chuyển đổi thành một bảng phụ PRODUCT_TAG có khóa chính kết hợp PK(PID, Tag), trong đó PID là khóa ngoại tham chiếu về PRODUCT. Điều này đảm bảo dữ liệu thỏa mãn dạng chuẩn 1 (1NF)."
   },
@@ -14099,8 +14099,8 @@
         "content": "<p>Không cần khóa ngoại</p>"
       }
     ],
-    "chapterId": "ch2",
-    "chapterName": "Chương 2: Mô hình & Đại số quan hệ",
+    "chapterId": "ch4",
+    "chapterName": "Chương 4: Mô hình ER & Ánh xạ quan hệ",
     "correctOptionId": "37ce4c6a-16af-4c4c-ab6a-a0c2f74daa86",
     "explanation": "Khi chuyển đổi mối quan hệ 1-N sang mô hình quan hệ, khóa chính của thực thể bên 1 (Khoa) sẽ được đưa vào làm khóa ngoại ở thực thể bên N (Lớp). Cách đặt này đảm bảo tính toàn vẹn tham chiếu và mỗi lớp học đều xác định được duy nhất một khoa trực thuộc."
   },
@@ -14274,8 +14274,8 @@
         "content": "<p>Không cần khóa ngoại</p>"
       }
     ],
-    "chapterId": "ch2",
-    "chapterName": "Chương 2: Mô hình & Đại số quan hệ",
+    "chapterId": "ch4",
+    "chapterName": "Chương 4: Mô hình ER & Ánh xạ quan hệ",
     "correctOptionId": "97f27a66-4153-486b-a4e1-92f2ea7b9800",
     "explanation": "Trong mối quan hệ 1-N (một khoa có nhiều lớp học), khóa chính của bảng bên 1 (Khoa) sẽ được đưa vào làm khóa ngoại ở bảng bên N (Lớp). Điều này giúp mỗi lớp học xác định được chính xác khoa quản lý mà không gây trùng lặp dữ liệu."
   },
@@ -14414,8 +14414,8 @@
         "content": "<p>Không cần khóa ngoại</p>"
       }
     ],
-    "chapterId": "ch2",
-    "chapterName": "Chương 2: Mô hình & Đại số quan hệ",
+    "chapterId": "ch4",
+    "chapterName": "Chương 4: Mô hình ER & Ánh xạ quan hệ",
     "correctOptionId": "da029b5b-16b5-486d-8911-5dd3e4ab94f8",
     "explanation": "Trong quan hệ 1-N giữa Khoa và Lớp học, mỗi lớp học chỉ trực thuộc duy nhất một khoa. Do đó khóa chính của Khoa được đưa sang bảng Lớp để làm khóa ngoại liên kết."
   },
@@ -18999,8 +18999,8 @@
         "content": "<p>COURSE(CID PK, SyllabusID UNIQUE/FK→SYLLABUS); SYLLABUS(SID PK, ...)</p>"
       }
     ],
-    "chapterId": "ch4",
-    "chapterName": "Chương 4: Mô hình ER & Ánh xạ quan hệ",
+    "chapterId": "ch2",
+    "chapterName": "Chương 2: Mô hình & Đại số quan hệ",
     "correctOptionId": "0f786a00-7897-4cb3-b3e2-23249efc9d03",
     "explanation": "Trong mối quan hệ 1-1 giữa Course và Syllabus, khóa ngoại có thể được đưa vào một trong hai bảng kèm theo ràng buộc duy nhất (UNIQUE). Ràng buộc UNIQUE trên SyllabusID đảm bảo rằng mỗi Syllabus chỉ được tham chiếu bởi duy nhất một Course, bảo toàn tính chất 1-1."
   },
