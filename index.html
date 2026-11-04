@@ -1,0 +1,1709 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luyện thi Trắc nghiệm CSDL - PTIT (567 Câu)</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- KaTeX CSS for relational algebra and math formulas -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+
+  <style>
+    :root {
+      --font-main: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      
+      /* Light theme */
+      --bg: #f8fafc;
+      --bg-surface: #ffffff;
+      --bg-subtle: #f1f5f9;
+      --border: #e2e8f0;
+      --border-strong: #cbd5e1;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --text-subtle: #94a3b8;
+      
+      --primary: #dc2626; /* PTIT Red */
+      --primary-hover: #b91c1c;
+      --primary-light: #fef2f2;
+      --primary-border: #fecaca;
+      
+      --accent-blue: #2563eb;
+      --accent-blue-light: #eff6ff;
+      --accent-green: #16a34a;
+      --accent-green-light: #f0fdf4;
+      --accent-yellow: #ca8a04;
+      --accent-yellow-light: #fefce8;
+      
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+    }
+
+    [data-theme="dark"] {
+      --bg: #090d16;
+      --bg-surface: #111827;
+      --bg-subtle: #1f2937;
+      --border: #283548;
+      --border-strong: #374151;
+      --text: #f9fafb;
+      --text-muted: #9ca3af;
+      --text-subtle: #6b7280;
+      
+      --primary: #ef4444;
+      --primary-hover: #dc2626;
+      --primary-light: rgba(239, 68, 68, 0.12);
+      --primary-border: rgba(239, 68, 68, 0.3);
+      
+      --accent-blue: #3b82f6;
+      --accent-blue-light: rgba(59, 130, 246, 0.15);
+      --accent-green: #22c55e;
+      --accent-green-light: rgba(34, 197, 94, 0.15);
+      --accent-yellow: #eab308;
+      --accent-yellow-light: rgba(234, 179, 8, 0.15);
+      
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.4);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    /* Header */
+    header {
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .header-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .brand-logo {
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(135deg, #dc2626, #991b1b);
+      color: white;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 18px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .brand-title {
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .brand-badge {
+      font-size: 11px;
+      padding: 2px 7px;
+      background: var(--primary-light);
+      color: var(--primary);
+      border: 1px solid var(--primary-border);
+      border-radius: 999px;
+      font-weight: 600;
+    }
+
+    .nav-modes {
+      display: flex;
+      background: var(--bg-subtle);
+      padding: 3px;
+      border-radius: var(--radius-md);
+      gap: 4px;
+    }
+
+    .mode-btn {
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      padding: 6px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+
+    .mode-btn.active {
+      background: var(--bg-surface);
+      color: var(--text);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .icon-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      background: var(--bg-surface);
+      color: var(--text);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      transition: all 0.15s;
+    }
+
+    .icon-btn:hover {
+      background: var(--bg-subtle);
+      border-color: var(--border-strong);
+    }
+
+    /* Main Container */
+    main {
+      flex: 1;
+      max-width: 1440px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 24px;
+      align-items: start;
+    }
+
+    @media (max-width: 1024px) {
+      main {
+        grid-template-columns: 1fr;
+        padding: 16px;
+      }
+    }
+
+    /* Left: Quiz View Area */
+    .quiz-area {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* Progress Banner */
+    .stats-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: var(--shadow-sm);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .stat-group {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-label {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+
+    .stat-val {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .progress-bar-container {
+      flex: 1;
+      min-width: 180px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .progress-track {
+      width: 100%;
+      height: 8px;
+      background: var(--bg-subtle);
+      border-radius: 999px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #dc2626, #ea580c);
+      width: 0%;
+      transition: width 0.3s ease;
+      border-radius: 999px;
+    }
+
+    /* Question Card */
+    .question-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .q-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 14px;
+    }
+
+    .q-title-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .q-number-badge {
+      background: var(--text);
+      color: var(--bg);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-mono);
+    }
+
+    .badge {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 9px;
+      border-radius: 999px;
+    }
+
+    .badge-easy {
+      background: var(--accent-green-light);
+      color: var(--accent-green);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+    }
+
+    .badge-medium {
+      background: var(--accent-yellow-light);
+      color: var(--accent-yellow);
+      border: 1px solid rgba(234, 179, 8, 0.3);
+    }
+
+    .badge-hard {
+      background: var(--primary-light);
+      color: var(--primary);
+      border: 1px solid var(--primary-border);
+    }
+
+    .badge-type {
+      background: var(--bg-subtle);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+    }
+
+    .q-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .bookmark-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s;
+    }
+
+    .bookmark-btn:hover {
+      background: var(--bg-subtle);
+      border-color: var(--border-strong);
+    }
+
+    .bookmark-btn.active {
+      background: var(--accent-yellow-light);
+      color: var(--accent-yellow);
+      border-color: rgba(234, 179, 8, 0.4);
+    }
+
+    /* Question Content */
+    .q-content {
+      font-size: 16px;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .q-content p {
+      margin-bottom: 12px;
+    }
+
+    .q-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .q-content img, .opt-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      margin: 10px 0;
+      cursor: zoom-in;
+      transition: transform 0.15s;
+      background: white; /* diagrams usually transparent or white */
+    }
+
+    .q-content img:hover, .opt-content img:hover {
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Options List */
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .option-card {
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      cursor: pointer;
+      background: var(--bg-surface);
+      transition: all 0.15s ease;
+      position: relative;
+    }
+
+    .option-card:hover {
+      border-color: var(--border-strong);
+      background: var(--bg-subtle);
+      transform: translateY(-1px);
+    }
+
+    .option-card.selected {
+      border-color: var(--primary);
+      background: var(--primary-light);
+    }
+
+    .option-card.correct-peek {
+      border-color: var(--accent-green);
+      background: var(--accent-green-light);
+    }
+
+    .opt-letter {
+      width: 28px;
+      height: 28px;
+      border-radius: var(--radius-sm);
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 13px;
+      color: var(--text-muted);
+      flex-shrink: 0;
+      margin-top: 2px;
+      font-family: var(--font-mono);
+      transition: all 0.15s;
+    }
+
+    .option-card.selected .opt-letter {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .opt-content {
+      flex: 1;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .opt-content p {
+      margin-bottom: 6px;
+    }
+    .opt-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Navigation Footer */
+    .q-nav-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+    }
+
+    .btn {
+      font-family: var(--font-main);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 9px 18px;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      font-weight: 600;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+    .btn-primary:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-secondary {
+      background: var(--bg-surface);
+      border-color: var(--border);
+      color: var(--text);
+    }
+    .btn-secondary:hover {
+      background: var(--bg-subtle);
+      border-color: var(--border-strong);
+    }
+
+    .btn-danger {
+      background: transparent;
+      color: var(--primary);
+      border-color: var(--primary-border);
+    }
+    .btn-danger:hover {
+      background: var(--primary-light);
+    }
+
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    /* Right: Question Matrix & Controls Sidebar */
+    .sidebar {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      position: sticky;
+      top: 76px;
+      max-height: calc(100vh - 96px);
+    }
+
+    .sidebar-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .sidebar-title {
+      font-size: 15px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Filter tabs inside sidebar */
+    .filter-tabs {
+      display: flex;
+      gap: 4px;
+      background: var(--bg-subtle);
+      padding: 3px;
+      border-radius: var(--radius-sm);
+      overflow-x: auto;
+    }
+
+    .filter-tab {
+      border: none;
+      background: transparent;
+      font-family: inherit;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-muted);
+      padding: 4px 8px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      white-space: nowrap;
+      flex: 1;
+      text-align: center;
+    }
+
+    .filter-tab.active {
+      background: var(--bg-surface);
+      color: var(--text);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* Search & Jump */
+    .search-box {
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 8px 12px 8px 32px;
+      font-size: 13px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: var(--bg-surface);
+      color: var(--text);
+      font-family: inherit;
+      outline: none;
+    }
+
+    .search-input:focus {
+      border-color: var(--primary);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 13px;
+      color: var(--text-subtle);
+      pointer-events: none;
+    }
+
+    /* Question Matrix Grid */
+    .matrix-container {
+      flex: 1;
+      overflow-y: auto;
+      padding-right: 4px;
+      max-height: 420px;
+    }
+
+    .matrix-container::-webkit-scrollbar {
+      width: 5px;
+    }
+    .matrix-container::-webkit-scrollbar-thumb {
+      background: var(--border-strong);
+      border-radius: 999px;
+    }
+
+    .matrix-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 6px;
+    }
+
+    .matrix-item {
+      aspect-ratio: 1;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: var(--bg-subtle);
+      color: var(--text-muted);
+      font-size: 12px;
+      font-weight: 600;
+      font-family: var(--font-mono);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.1s;
+      position: relative;
+    }
+
+    .matrix-item:hover {
+      border-color: var(--primary);
+      transform: scale(1.05);
+    }
+
+    .matrix-item.current {
+      outline: 2px solid var(--primary);
+      outline-offset: 1px;
+      font-weight: 700;
+      color: var(--primary);
+      background: var(--primary-light);
+    }
+
+    .matrix-item.answered {
+      background: var(--accent-green-light);
+      color: var(--accent-green);
+      border-color: rgba(34, 197, 94, 0.4);
+    }
+
+    .matrix-item.bookmarked::after {
+      content: '★';
+      position: absolute;
+      top: 1px;
+      right: 2px;
+      font-size: 8px;
+      color: var(--accent-yellow);
+    }
+
+    /* Legend */
+    .matrix-legend {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: var(--text-muted);
+      padding-top: 8px;
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .legend-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 2px;
+    }
+
+    /* Exam Mode View */
+    .exam-view, .all-view {
+      display: none;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .exam-setup-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      box-shadow: var(--shadow-sm);
+      text-align: center;
+      max-width: 600px;
+      margin: 40px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .exam-setup-title {
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .exam-config-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--text-muted);
+    }
+
+    .form-select {
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      background: var(--bg-subtle);
+      color: var(--text);
+      font-family: inherit;
+      font-size: 14px;
+    }
+
+    .timer-badge {
+      font-size: 18px;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      background: var(--primary-light);
+      color: var(--primary);
+      padding: 6px 14px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--primary-border);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* All Questions View */
+    .all-item-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+
+    /* Image Modal Lightbox */
+    .lightbox-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.85);
+      z-index: 999;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      backdrop-filter: blur(4px);
+    }
+
+    .lightbox-modal.active {
+      display: flex;
+    }
+
+    .lightbox-img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: var(--radius-sm);
+      background: white;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: white;
+      font-size: 28px;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+    }
+
+    /* Keyboard shortcuts guide */
+    .shortcuts-guide {
+      font-size: 12px;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 6px;
+    }
+
+    kbd {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 2px 5px;
+      font-size: 11px;
+      font-family: var(--font-mono);
+      color: var(--text);
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--text);
+      color: var(--bg);
+      padding: 12px 20px;
+      border-radius: var(--radius-md);
+      font-size: 14px;
+      font-weight: 500;
+      box-shadow: var(--shadow-lg);
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-inner">
+      <a href="#" class="brand">
+        <div class="brand-logo">DB</div>
+        <div>
+          <div class="brand-title">
+            PTIT DB-Quiz
+            <span class="brand-badge">567 Câu</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Mode switcher -->
+      <nav class="nav-modes">
+        <button class="mode-btn active" id="modePracticeBtn" onclick="switchMode('practice')">
+          <span>📖</span> Luyện tập
+        </button>
+        <button class="mode-btn" id="modeExamBtn" onclick="switchMode('exam')">
+          <span>⏱️</span> Thi thử
+        </button>
+        <button class="mode-btn" id="modeAllBtn" onclick="switchMode('all')">
+          <span>📑</span> Đọc toàn bộ
+        </button>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="themeBtn" title="Đổi giao diện Sáng / Tối" onclick="toggleTheme()">
+          🌓
+        </button>
+        <button class="icon-btn" id="resetBtn" title="Đặt lại tiến độ làm bài" onclick="confirmReset()">
+          🔄
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main>
+    <!-- Left Area: Practice View -->
+    <div class="quiz-area" id="practiceView">
+      <!-- Stats card -->
+      <div class="stats-card">
+        <div class="stat-group">
+          <div class="stat-item">
+            <span class="stat-label">Đã làm</span>
+            <span class="stat-val" id="statAnswered">0 / 567</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Đánh dấu</span>
+            <span class="stat-val" id="statBookmarked">0</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Tiến độ</span>
+            <span class="stat-val" id="statPercent">0%</span>
+          </div>
+        </div>
+
+        <div class="progress-bar-container">
+          <div class="progress-track">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Question Card -->
+      <div class="question-card" id="questionCard">
+        <div class="q-header">
+          <div class="q-title-row">
+            <span class="q-number-badge" id="qNumberBadge">Câu 1 / 567</span>
+            <span class="badge badge-easy" id="qDifficultyBadge">Easy</span>
+            <span class="badge badge-type" id="qTypeBadge">Trắc nghiệm</span>
+          </div>
+          <div class="q-actions">
+            <button class="bookmark-btn" id="bookmarkBtn" onclick="toggleBookmark()">
+              <span id="bookmarkIcon">⭐</span> Đánh dấu
+            </button>
+          </div>
+        </div>
+
+        <!-- Question Text HTML -->
+        <div class="q-content" id="qContent">
+          Đang tải câu hỏi...
+        </div>
+
+        <!-- Options Container -->
+        <div class="options-grid" id="optionsGrid">
+          <!-- Rendered dynamically -->
+        </div>
+
+        <!-- Action Bar & Navigation -->
+        <div class="q-nav-bar">
+          <button class="btn btn-secondary" id="prevBtn" onclick="prevQuestion()">
+            ← Câu trước
+          </button>
+          
+          <div style="display: flex; gap: 8px;">
+            <button class="btn btn-secondary" onclick="clearCurrentAnswer()">
+              Xóa chọn
+            </button>
+          </div>
+
+          <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()">
+            Câu tiếp theo →
+          </button>
+        </div>
+
+        <div class="shortcuts-guide">
+          <span>Phím tắt: <kbd>1</kbd> - <kbd>4</kbd> chọn đáp án &bull; <kbd>←</kbd> / <kbd>→</kbd> chuyển câu &bull; <kbd>F</kbd> đánh dấu câu</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Sidebar: Question Matrix & Filtering -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-title">
+          <span>Danh sách câu hỏi</span>
+        </div>
+        <span style="font-size: 12px; color: var(--text-muted);" id="matrixCount">567 câu</span>
+      </div>
+
+      <!-- Search & Jump -->
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" class="search-input" id="searchInput" placeholder="Tìm câu hỏi, từ khóa, công thức..." oninput="handleSearch()">
+      </div>
+
+      <!-- Filter tabs -->
+      <div class="filter-tabs">
+        <button class="filter-tab active" data-filter="all" onclick="setFilter('all')">Tất cả</button>
+        <button class="filter-tab" data-filter="unanswered" onclick="setFilter('unanswered')">Chưa làm</button>
+        <button class="filter-tab" data-filter="answered" onclick="setFilter('answered')">Đã làm</button>
+        <button class="filter-tab" data-filter="bookmarked" onclick="setFilter('bookmarked')">Đã lưu ⭐</button>
+      </div>
+
+      <!-- Matrix Grid -->
+      <div class="matrix-container">
+        <div class="matrix-grid" id="matrixGrid">
+          <!-- 1..567 generated here -->
+        </div>
+      </div>
+
+      <!-- Legend -->
+      <div class="matrix-legend">
+        <div class="legend-item">
+          <div class="legend-dot" style="background: var(--bg-subtle); border: 1px solid var(--border);"></div>
+          <span>Chưa làm</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot" style="background: var(--accent-green);"></div>
+          <span>Đã làm</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot" style="background: var(--accent-yellow);"></div>
+          <span>Đã lưu ★</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot" style="background: var(--primary);"></div>
+          <span>Đang xem</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Center Area: Exam Mode (Hidden by default) -->
+    <div class="exam-view" id="examView" style="grid-column: 1 / -1; width: 100%;">
+      <div class="exam-setup-card" id="examSetupCard">
+        <div class="exam-setup-title">⏱️ Thi Thử Trắc Nghiệm CSDL</div>
+        <p style="color: var(--text-muted); font-size: 14px;">
+          Hệ thống sẽ bốc ngẫu nhiên số câu hỏi từ ngân hàng 567 câu và tính giờ tương tự như thi thật.
+        </p>
+
+        <div class="exam-config-grid">
+          <div class="form-group">
+            <label for="examQuestionCount">Số lượng câu hỏi</label>
+            <select class="form-select" id="examQuestionCount">
+              <option value="10">10 câu (Luyện hàng ngày)</option>
+              <option value="20" selected>20 câu</option>
+              <option value="40">40 câu (Đề thi chuẩn PTIT)</option>
+              <option value="60">60 câu</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="examDuration">Thời gian làm bài</label>
+            <select class="form-select" id="examDuration">
+              <option value="10">10 phút</option>
+              <option value="20" selected>20 phút</option>
+              <option value="40">40 phút</option>
+              <option value="60">60 phút</option>
+            </select>
+          </div>
+        </div>
+
+        <button class="btn btn-primary" style="padding: 12px; font-size: 16px;" onclick="startExam()">
+          🚀 Bắt đầu làm bài thi
+        </button>
+      </div>
+
+      <!-- Exam Active Arena -->
+      <div id="examArena" style="display: none; max-width: 900px; margin: 0 auto; width: 100%; gap: 16px; flex-direction: column;">
+        <div class="stats-card" style="justify-content: space-between;">
+          <div class="stat-group">
+            <div class="stat-item">
+              <span class="stat-label">Tiến độ bài thi</span>
+              <span class="stat-val" id="examProgressText">0 / 20</span>
+            </div>
+          </div>
+          <div class="timer-badge" id="examTimerBadge">
+            ⏳ 20:00
+          </div>
+          <button class="btn btn-primary" onclick="submitExam()">
+            Nộp bài thi 📝
+          </button>
+        </div>
+
+        <div id="examQuestionsList" style="display: flex; flex-direction: column; gap: 20px;">
+          <!-- Exam questions rendered here -->
+        </div>
+
+        <div style="text-align: center; padding: 20px 0;">
+          <button class="btn btn-primary" style="padding: 12px 30px; font-size: 16px;" onclick="submitExam()">
+            Nộp bài thi 📝
+          </button>
+        </div>
+      </div>
+
+      <!-- Exam Result Dialog -->
+      <div id="examResultCard" class="exam-setup-card" style="display: none;">
+        <div class="exam-setup-title">🎉 Kết Quả Bài Thi</div>
+        <div style="font-size: 48px; font-weight: 800; color: var(--accent-green);" id="examScore">
+          --
+        </div>
+        <p id="examSummaryText" style="color: var(--text-muted); font-size: 15px;"></p>
+        <button class="btn btn-primary" onclick="switchMode('practice')">
+          Quay lại Luyện tập tự do
+        </button>
+      </div>
+    </div>
+
+    <!-- Center Area: All Questions List View (Hidden by default) -->
+    <div class="all-view" id="allView" style="grid-column: 1 / -1; width: 100%;">
+      <div class="stats-card">
+        <div>
+          <h2 style="font-size: 18px; font-weight: 700;">📑 Danh sách đầy đủ 567 câu hỏi</h2>
+          <p style="color: var(--text-muted); font-size: 13px;">Dễ dàng tra cứu và cuộn xem toàn bộ ngân hàng câu hỏi môn CSDL.</p>
+        </div>
+        <div class="search-box" style="min-width: 280px;">
+          <span class="search-icon">🔍</span>
+          <input type="text" class="search-input" id="allSearchInput" placeholder="Tìm kiếm nhanh trong 567 câu..." oninput="handleAllSearch()">
+        </div>
+      </div>
+
+      <div id="allListContainer">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Image Lightbox Modal -->
+  <div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox()">
+    <button class="lightbox-close">&times;</button>
+    <img src="" class="lightbox-img" id="lightboxImg" alt="Enlarged Diagram">
+  </div>
+
+  <!-- Toast Element -->
+  <div class="toast" id="toast">Thông báo</div>
+
+  <!-- Load Questions Data (works locally and online) -->
+  <script src="questions.js"></script>
+
+  <script>
+    // App State
+    let questions = window.QUESTIONS_DATA || [];
+    let currentIndex = 0;
+    let userAnswers = {}; // { questionId: optionId }
+    let bookmarks = new Set();
+    let currentFilter = 'all';
+    let searchQuery = '';
+    let filteredIndices = [];
+    let currentMode = 'practice'; // 'practice' | 'exam' | 'all'
+    
+    // Exam state
+    let examQuestions = [];
+    let examAnswers = {};
+    let examTimerInterval = null;
+    let examTimeRemaining = 0;
+
+    // LocalStorage Keys
+    const STORAGE_KEY_ANSWERS = 'ptit_db_answers_v1';
+    const STORAGE_KEY_BOOKMARKS = 'ptit_db_bookmarks_v1';
+    const STORAGE_KEY_THEME = 'ptit_db_theme_v1';
+    const STORAGE_KEY_INDEX = 'ptit_db_index_v1';
+
+    // Initialize App
+    async function init() {
+      // Load from questions.json if questions.js didn't load
+      if (!questions || questions.length === 0) {
+        try {
+          const res = await fetch('questions.json');
+          questions = await res.json();
+        } catch (e) {
+          console.error("Could not load questions.json:", e);
+        }
+      }
+
+      loadSavedState();
+      initTheme();
+      updateFilteredIndices();
+      renderMatrix();
+      renderCurrentQuestion();
+      updateStats();
+
+      // Setup Keyboard Shortcuts
+      window.addEventListener('keydown', handleKeyNavigation);
+
+      // Lightbox click delegation
+      document.addEventListener('click', (e) => {
+        if (e.target.tagName === 'IMG' && !e.target.classList.contains('lightbox-img')) {
+          openLightbox(e.target.src);
+        }
+      });
+    }
+
+    function loadSavedState() {
+      try {
+        const savedAnswers = localStorage.getItem(STORAGE_KEY_ANSWERS);
+        if (savedAnswers) userAnswers = JSON.parse(savedAnswers);
+
+        const savedBookmarks = localStorage.getItem(STORAGE_KEY_BOOKMARKS);
+        if (savedBookmarks) bookmarks = new Set(JSON.parse(savedBookmarks));
+
+        const savedIndex = localStorage.getItem(STORAGE_KEY_INDEX);
+        if (savedIndex !== null) {
+          const idx = parseInt(savedIndex, 10);
+          if (idx >= 0 && idx < questions.length) currentIndex = idx;
+        }
+      } catch (e) {
+        console.warn("Storage loading error:", e);
+      }
+    }
+
+    function saveState() {
+      try {
+        localStorage.setItem(STORAGE_KEY_ANSWERS, JSON.stringify(userAnswers));
+        localStorage.setItem(STORAGE_KEY_BOOKMARKS, JSON.stringify(Array.from(bookmarks)));
+        localStorage.setItem(STORAGE_KEY_INDEX, currentIndex.toString());
+      } catch (e) {
+        console.warn("Storage saving error:", e);
+      }
+    }
+
+    function initTheme() {
+      const savedTheme = localStorage.getItem(STORAGE_KEY_THEME) || 
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    }
+
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme') || 'light';
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem(STORAGE_KEY_THEME, next);
+      showToast(`Đã chuyển sang giao diện ${next === 'dark' ? 'Tối 🌙' : 'Sáng ☀️'}`);
+    }
+
+    // Filter & Search Logic
+    function updateFilteredIndices() {
+      const q = searchQuery.toLowerCase().trim();
+      filteredIndices = [];
+      
+      questions.forEach((item, idx) => {
+        const qId = item.id;
+        const isAnswered = !!userAnswers[qId];
+        const isBookmarked = bookmarks.has(qId);
+        
+        let matchFilter = true;
+        if (currentFilter === 'unanswered' && isAnswered) matchFilter = false;
+        if (currentFilter === 'answered' && !isAnswered) matchFilter = false;
+        if (currentFilter === 'bookmarked' && !isBookmarked) matchFilter = false;
+
+        let matchSearch = true;
+        if (q) {
+          const contentText = item.content.toLowerCase();
+          const qNum = item.number.toString();
+          const optionText = item.options.map(o => o.content.toLowerCase()).join(' ');
+          if (!contentText.includes(q) && !qNum.includes(q) && !optionText.includes(q)) {
+            matchSearch = false;
+          }
+        }
+
+        if (matchFilter && matchSearch) {
+          filteredIndices.push(idx);
+        }
+      });
+
+      document.getElementById('matrixCount').textContent = `${filteredIndices.length} câu`;
+    }
+
+    function setFilter(filter) {
+      currentFilter = filter;
+      document.querySelectorAll('.filter-tab').forEach(tab => {
+        tab.classList.toggle('active', tab.dataset.filter === filter);
+      });
+      updateFilteredIndices();
+      renderMatrix();
+    }
+
+    function handleSearch() {
+      searchQuery = document.getElementById('searchInput').value;
+      updateFilteredIndices();
+      renderMatrix();
+    }
+
+    // Render Question
+    function renderCurrentQuestion() {
+      if (!questions || questions.length === 0) return;
+      const item = questions[currentIndex];
+      if (!item) return;
+
+      // Update Header Badges
+      document.getElementById('qNumberBadge').textContent = `Câu ${item.number} / ${questions.length}`;
+      
+      const diffBadge = document.getElementById('qDifficultyBadge');
+      diffBadge.textContent = item.difficulty || 'Easy';
+      diffBadge.className = 'badge';
+      if (item.difficulty === 'Hard') diffBadge.classList.add('badge-hard');
+      else if (item.difficulty === 'Medium') diffBadge.classList.add('badge-medium');
+      else diffBadge.classList.add('badge-easy');
+
+      // Update Bookmark button
+      const isBookmarked = bookmarks.has(item.id);
+      const bBtn = document.getElementById('bookmarkBtn');
+      bBtn.classList.toggle('active', isBookmarked);
+      document.getElementById('bookmarkIcon').textContent = isBookmarked ? '★' : '⭐';
+
+      // Update Question Content
+      document.getElementById('qContent').innerHTML = item.content;
+
+      // Render Options
+      const grid = document.getElementById('optionsGrid');
+      grid.innerHTML = '';
+      const selectedOptionId = userAnswers[item.id];
+
+      item.options.forEach((opt, optIdx) => {
+        const isSelected = selectedOptionId === opt.id;
+        const optCard = document.createElement('div');
+        optCard.className = `option-card ${isSelected ? 'selected' : ''}`;
+        optCard.onclick = () => selectOption(item.id, opt.id);
+
+        optCard.innerHTML = `
+          <div class="opt-letter">${opt.label}</div>
+          <div class="opt-content">${opt.content}</div>
+        `;
+        grid.appendChild(optCard);
+      });
+
+      // Update Prev / Next Buttons
+      document.getElementById('prevBtn').disabled = (currentIndex === 0);
+      document.getElementById('nextBtn').disabled = (currentIndex === questions.length - 1);
+
+      // Highlight in matrix
+      highlightCurrentInMatrix();
+      saveState();
+    }
+
+    function selectOption(qId, optId) {
+      if (userAnswers[qId] === optId) {
+        // Toggle off if already selected
+        delete userAnswers[qId];
+      } else {
+        userAnswers[qId] = optId;
+      }
+      renderCurrentQuestion();
+      updateStats();
+      renderMatrix();
+      saveState();
+    }
+
+    function clearCurrentAnswer() {
+      const item = questions[currentIndex];
+      if (item && userAnswers[item.id]) {
+        delete userAnswers[item.id];
+        renderCurrentQuestion();
+        updateStats();
+        renderMatrix();
+        saveState();
+        showToast('Đã xóa đáp án đã chọn.');
+      }
+    }
+
+    function toggleBookmark() {
+      const item = questions[currentIndex];
+      if (!item) return;
+
+      if (bookmarks.has(item.id)) {
+        bookmarks.delete(item.id);
+        showToast('Đã bỏ lưu câu hỏi.');
+      } else {
+        bookmarks.add(item.id);
+        showToast('Đã lưu câu hỏi vào danh sách ⭐');
+      }
+      renderCurrentQuestion();
+      updateStats();
+      renderMatrix();
+      saveState();
+    }
+
+    function prevQuestion() {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderCurrentQuestion();
+      }
+    }
+
+    function nextQuestion() {
+      if (currentIndex < questions.length - 1) {
+        currentIndex++;
+        renderCurrentQuestion();
+      }
+    }
+
+    function jumpToQuestion(idx) {
+      if (idx >= 0 && idx < questions.length) {
+        currentIndex = idx;
+        renderCurrentQuestion();
+        if (window.innerWidth <= 1024) {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      }
+    }
+
+    // Render Matrix Grid
+    function renderMatrix() {
+      const grid = document.getElementById('matrixGrid');
+      grid.innerHTML = '';
+
+      filteredIndices.forEach(idx => {
+        const item = questions[idx];
+        const isAnswered = !!userAnswers[item.id];
+        const isBookmarked = bookmarks.has(item.id);
+        const isCurrent = (currentIndex === idx);
+
+        const btn = document.createElement('button');
+        btn.className = `matrix-item ${isAnswered ? 'answered' : ''} ${isBookmarked ? 'bookmarked' : ''} ${isCurrent ? 'current' : ''}`;
+        btn.textContent = item.number;
+        btn.onclick = () => jumpToQuestion(idx);
+        grid.appendChild(btn);
+      });
+    }
+
+    function highlightCurrentInMatrix() {
+      document.querySelectorAll('.matrix-item').forEach(el => {
+        const num = parseInt(el.textContent, 10);
+        const item = questions[currentIndex];
+        if (item && num === item.number) {
+          el.classList.add('current');
+          el.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+        } else {
+          el.classList.remove('current');
+        }
+      });
+    }
+
+    function updateStats() {
+      const total = questions.length;
+      const answered = Object.keys(userAnswers).length;
+      const bookmarked = bookmarks.size;
+      const pct = total > 0 ? Math.round((answered / total) * 100) : 0;
+
+      document.getElementById('statAnswered').textContent = `${answered} / ${total}`;
+      document.getElementById('statBookmarked').textContent = bookmarked;
+      document.getElementById('statPercent').textContent = `${pct}%`;
+      document.getElementById('progressFill').style.width = `${pct}%`;
+    }
+
+    // Mode Switching
+    function switchMode(mode) {
+      currentMode = mode;
+      document.getElementById('modePracticeBtn').classList.toggle('active', mode === 'practice');
+      document.getElementById('modeExamBtn').classList.toggle('active', mode === 'exam');
+      document.getElementById('modeAllBtn').classList.toggle('active', mode === 'all');
+
+      document.getElementById('practiceView').style.display = (mode === 'practice') ? 'flex' : 'none';
+      document.getElementById('sidebar').style.display = (mode === 'practice') ? 'flex' : 'none';
+      document.getElementById('examView').style.display = (mode === 'exam') ? 'flex' : 'none';
+      document.getElementById('allView').style.display = (mode === 'all') ? 'flex' : 'none';
+
+      if (mode === 'all') {
+        renderAllQuestions();
+      }
+    }
+
+    // Exam Mode Logic
+    function startExam() {
+      const count = parseInt(document.getElementById('examQuestionCount').value, 10);
+      const minutes = parseInt(document.getElementById('examDuration').value, 10);
+
+      // Randomly sample 'count' questions
+      const shuffled = [...questions].sort(() => 0.5 - Math.random());
+      examQuestions = shuffled.slice(0, count);
+      examAnswers = {};
+
+      document.getElementById('examSetupCard').style.display = 'none';
+      document.getElementById('examResultCard').style.display = 'none';
+      document.getElementById('examArena').style.display = 'flex';
+
+      // Start Countdown
+      examTimeRemaining = minutes * 60;
+      updateExamTimerDisplay();
+      if (examTimerInterval) clearInterval(examTimerInterval);
+      examTimerInterval = setInterval(() => {
+        examTimeRemaining--;
+        updateExamTimerDisplay();
+        if (examTimeRemaining <= 0) {
+          clearInterval(examTimerInterval);
+          alert("Hết giờ làm bài! Hệ thống sẽ tự động nộp bài.");
+          submitExam();
+        }
+      }, 1000);
+
+      renderExamQuestions();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function updateExamTimerDisplay() {
+      const mins = Math.floor(examTimeRemaining / 60);
+      const secs = examTimeRemaining % 60;
+      document.getElementById('examTimerBadge').textContent = 
+        `⏳ ${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    }
+
+    function renderExamQuestions() {
+      const container = document.getElementById('examQuestionsList');
+      container.innerHTML = '';
+      const total = examQuestions.length;
+
+      examQuestions.forEach((q, idx) => {
+        const card = document.createElement('div');
+        card.className = 'question-card';
+        card.innerHTML = `
+          <div class="q-header">
+            <div class="q-title-row">
+              <span class="q-number-badge">Câu ${idx + 1} / ${total}</span>
+              <span class="badge badge-easy">${q.difficulty || 'Easy'}</span>
+            </div>
+          </div>
+          <div class="q-content">${q.content}</div>
+          <div class="options-grid" id="exam-opts-${q.id}">
+            ${q.options.map(opt => `
+              <div class="option-card ${examAnswers[q.id] === opt.id ? 'selected' : ''}" 
+                   onclick="selectExamOption('${q.id}', '${opt.id}')">
+                <div class="opt-letter">${opt.label}</div>
+                <div class="opt-content">${opt.content}</div>
+              </div>
+            `).join('')}
+          </div>
+        `;
+        container.appendChild(card);
+      });
+
+      updateExamProgress();
+    }
+
+    function selectExamOption(qId, optId) {
+      examAnswers[qId] = optId;
+      const optsGrid = document.getElementById(`exam-opts-${qId}`);
+      if (optsGrid) {
+        optsGrid.querySelectorAll('.option-card').forEach((card, idx) => {
+          const q = examQuestions.find(it => it.id === qId);
+          if (q && q.options[idx].id === optId) {
+            card.classList.add('selected');
+          } else {
+            card.classList.remove('selected');
+          }
+        });
+      }
+      updateExamProgress();
+    }
+
+    function updateExamProgress() {
+      const answered = Object.keys(examAnswers).length;
+      document.getElementById('examProgressText').textContent = `${answered} / ${examQuestions.length}`;
+    }
+
+    function submitExam() {
+      if (examTimerInterval) clearInterval(examTimerInterval);
+      const answered = Object.keys(examAnswers).length;
+      const total = examQuestions.length;
+
+      document.getElementById('examArena').style.display = 'none';
+      const resCard = document.getElementById('examResultCard');
+      resCard.style.display = 'flex';
+
+      document.getElementById('examScore').textContent = `${answered}/${total}`;
+      document.getElementById('examSummaryText').textContent = 
+        `Bạn đã hoàn thành ${answered} trên tổng số ${total} câu hỏi trong bài thi thử. Tiếp tục luyện tập để đạt kết quả cao nhất!`;
+    }
+
+    // All Questions Mode Rendering
+    function renderAllQuestions() {
+      const container = document.getElementById('allListContainer');
+      container.innerHTML = '';
+      const q = (document.getElementById('allSearchInput').value || '').toLowerCase().trim();
+
+      questions.forEach(item => {
+        if (q) {
+          const content = item.content.toLowerCase();
+          const qNum = item.number.toString();
+          if (!content.includes(q) && !qNum.includes(q)) return;
+        }
+
+        const card = document.createElement('div');
+        card.className = 'all-item-card';
+        card.innerHTML = `
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <div style="display: flex; gap: 8px; align-items: center;">
+              <span class="q-number-badge">Câu ${item.number}</span>
+              <span class="badge ${item.difficulty === 'Hard' ? 'badge-hard' : item.difficulty === 'Medium' ? 'badge-medium' : 'badge-easy'}">${item.difficulty}</span>
+            </div>
+            <button class="btn btn-secondary" style="padding: 4px 10px; font-size: 12px;" onclick="switchMode('practice'); jumpToQuestion(${item.number - 1})">
+              Tới câu này ↗
+            </button>
+          </div>
+          <div class="q-content">${item.content}</div>
+          <div class="options-grid" style="margin-top: 14px;">
+            ${item.options.map(opt => `
+              <div class="option-card ${userAnswers[item.id] === opt.id ? 'selected' : ''}" 
+                   onclick="selectOption('${item.id}', '${opt.id}'); renderAllQuestions();">
+                <div class="opt-letter">${opt.label}</div>
+                <div class="opt-content">${opt.content}</div>
+              </div>
+            `).join('')}
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function handleAllSearch() {
+      renderAllQuestions();
+    }
+
+    // Keyboard Shortcuts
+    function handleKeyNavigation(e) {
+      if (currentMode !== 'practice') return;
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
+      if (e.key === 'ArrowLeft') {
+        prevQuestion();
+      } else if (e.key === 'ArrowRight') {
+        nextQuestion();
+      } else if (e.key.toLowerCase() === 'f') {
+        toggleBookmark();
+      } else if (['1', '2', '3', '4'].includes(e.key)) {
+        const optIdx = parseInt(e.key, 10) - 1;
+        const item = questions[currentIndex];
+        if (item && item.options[optIdx]) {
+          selectOption(item.id, item.options[optIdx].id);
+        }
+      }
+    }
+
+    // Lightbox Modal
+    function openLightbox(src) {
+      document.getElementById('lightboxImg').src = src;
+      document.getElementById('lightboxModal').classList.add('active');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightboxModal').classList.remove('active');
+    }
+
+    // Toast
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+
+    // Reset Confirmation
+    function confirmReset() {
+      if (confirm("Bạn có chắc chắn muốn đặt lại toàn bộ lịch sử làm bài và các câu đã đánh dấu?")) {
+        userAnswers = {};
+        bookmarks.clear();
+        saveState();
+        renderCurrentQuestion();
+        updateStats();
+        renderMatrix();
+        showToast("Đã đặt lại toàn bộ tiến độ làm bài!");
+      }
+    }
+
+    // Run
+    window.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+</html>
